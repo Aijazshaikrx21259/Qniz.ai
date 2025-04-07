@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hôtel Agadir Paradise - Découvrez le meilleur d'Agadir</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1518544866330-95b331edbcd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .activity-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .restaurant-card:hover .restaurant-img {
+            transform: scale(1.05);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-umbrella-beach text-3xl text-amber-500 mr-2"></i>
+                <h1 class="text-2xl font-bold text-gray-800">Agadir<span class="text-amber-500">Paradise</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#activities" class="text-gray-700 hover:text-amber-500 font-medium transition">Activités</a>
+                <a href="#restaurants" class="text-gray-700 hover:text-amber-500 font-medium transition">Restauration</a>
+                <a href="#discover" class="text-gray-700 hover:text-amber-500 font-medium transition">Découvrir Agadir</a>
+                <a href="#contact" class="text-gray-700 hover:text-amber-500 font-medium transition">Contact</a>
+            </nav>
+            <button class="md:hidden text-gray-700" id="mobile-menu-button">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-white py-2 px-4 shadow-md" id="mobile-menu">
+            <a href="#activities" class="block py-2 text-gray-700 hover:text-amber-500">Activités</a>
+            <a href="#restaurants" class="block py-2 text-gray-700 hover:text-amber-500">Restauration</a>
+            <a href="#discover" class="block py-2 text-gray-700 hover:text-amber-500">Découvrir Agadir</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-amber-500">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg h-96 flex items-center justify-center text-white">
+        <div class="text-center px-4">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Bienvenue à Agadir</h1>
+            <p class="text-xl md:text-2xl mb-6">Découvrez le paradis marocain entre mer, montagne et désert</p>
+            <button class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
+                Réservez maintenant
+            </button>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section id="activities" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Nos Activités & Services</h2>
+            
+            <!-- Tabs -->
+            <div class="flex flex-wrap justify-center mb-8">
+                <button class="tab-btn active px-6 py-2 font-medium text-amber-600 border-b-2 border-amber-500" data-tab="excursions">Excursions</button>
+                <button class="tab-btn px-6 py-2 font-medium text-gray-600 hover:text-amber-500" data-tab="nautical">Activités Nautiques</button>
+                <button class="tab-btn px-6 py-2 font-medium text-gray-600 hover:text-amber-500" data-tab="services">Services Hôtel</button>
+            </div>
+            
+            <!-- Tab Content -->
+            <div class="tab-content active" id="excursions">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Excursion 1 -->
+                    <div class="activity-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1601992688418-7aaf5a0d3a1a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Montagnes de l'Atlas" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-gray-800">Excursion dans les montagnes de l'Atlas</h3>
+                            <p class="text-gray-600 mb-4">Découvrez la beauté sauvage des montagnes de l'Atlas, avec une randonnée guidée dans des villages berbères et une vue imprenable.</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="text-gray-500"><i class="far fa-clock mr-2"></i>1 journée</p>
+                                    <p class="text-amber-600 font-bold text-xl mt-2">60 EUR</p>
+                                </div>
+                                <button class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-full transition">Réserver</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Excursion 2 -->
+                    <div class="activity-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Désert d'Agadir" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-gray-800">Safari dans le désert d'Agadir</h3>
+                            <p class="text-gray-600 mb-4">Partez pour un safari inoubliable dans le désert, avec une balade en 4x4, suivie d'une promenade à dos de chameau.</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="text-gray-500"><i class="far fa-clock mr-2"></i>4 heures</p>
+                                    <p class="text-amber-600 font-bold text-xl mt-2">75 EUR</p>
+                                </div>
+                                <button class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-full transition">Réserver</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Excursion 3 -->
+                    <div class="activity-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1560279966-8a735e8e1b9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Observation des dauphins" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-gray-800">Excursion en bateau</h3>
+                            <p class="text-gray-600 mb-4">Embarquez pour une aventure en mer, avec des chances d'observer des dauphins dans leur habitat naturel.</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="text-gray-500"><i class="far fa-clock mr-2"></i>3 heures</p>
+                                    <p class="text-amber-600 font-bold text-xl mt-2">50 EUR</p>
+                                </div>
+                                <button class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-full transition">Réserver</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="nautical">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Nautical 1 -->
+                    <div class="activity-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1502933691298-84fc74342871?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Surf à Agadir" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-gray-800">Cours de Surf et Planche à voile</h3>
+                            <p class="text-gray-600 mb-4">Agadir est un excellent spot pour les sports nautiques. Offrez à vos clients la possibilité d'apprendre à surfer ou à pratiquer la planche à voile.</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="text-gray-500"><i class="far fa-clock mr-2"></i>2-3 heures</p>
+                                    <p class="text-amber-600 font-bold text-xl mt-2">40 EUR</p>
+                                </div>
+                                <button class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-full transition">Réserver</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Nautical 2 -->
+                    <div class="activity-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1560279965-8c31fdd36ec5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Plongée sous-marine" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-gray-800">Plongée sous-marine</h3>
+                            <p class="text-gray-600 mb-4">Exploration des fonds marins d'Agadir, avec un guide certifié pour une expérience de plongée unique.</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="text-gray-500"><i class="far fa-clock mr-2"></i>1-2 heures</p>
+                                    <p class="text-amber-600 font-bold text-xl mt-2">60 EUR</p>
+                                </div>
+                                <button class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-full transition">Réserver</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="services">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Service 1 -->
+                    <div class="activity-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Spa et Hammam" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-gray-800">Spa et Hammam traditionnel</h3>
+                            <p class="text-gray-600 mb-4">Offrez à vos clients un moment de détente avec un massage traditionnel marocain et un gommage au savon noir dans notre spa.</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="text-gray-500"><i class="far fa-clock mr-2"></i>1-2 heures</p>
+                                    <p class="text-amber-600 font-bold text-xl mt-2">40 EUR</p>
+                                </div>
+                                <button class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-full transition">Réserver</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="activity-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1550353127-b0da3ae8e7aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Navette aéroport" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-gray-800">Service de navette aéroport</h3>
+                            <p class="text-gray-600 mb-4">Transfert privé depuis et vers l'aéroport d'Agadir, avec une navette confortable et un service personnalisé.</p>
+                            <div class="flex justify-between items-center">
+                                <div>
+                                    <p class="text-gray-500"><i class="fas fa-road mr-2"></i>20 min</p>
+                                    <p class="text-amber-600 font-bold text-xl mt-2">20 EUR</p>
+                                </div>
+                                <button class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-full transition">Réserver</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restaurants Section -->
+    <section id="restaurants" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Restauration à Agadir</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Restaurant 1 -->
+                <div class="restaurant-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Le Jardin d'Eau" class="restaurant-img w-full h-full object-cover transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Le Jardin d'Eau</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="bg-amber-100 text-amber-800 text-xs font-semibold px-2.5 py-0.5 rounded">Marocain & International</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Le restaurant offre une ambiance élégante avec des plats marocains raffinés, comme le couscous royal et le tagine d'agneau aux pruneaux.</p>
+                        <div class="flex justify-between items-center">
+                            <p class="text-amber-600 font-bold">15-30 EUR</p>
+                            <button class="text-amber-500 hover:text-amber-600 font-medium flex items-center">
+                                Voir plus <i class="fas fa-chevron-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Restaurant 2 -->
+                <div class="restaurant-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="La Table du Sofitel" class="restaurant-img w-full h-full object-cover transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">La Table du Sofitel</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded">Gastronomique</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Profitez d'une cuisine haut de gamme dans un cadre luxueux, avec des plats savoureux comme le homard rôti et le couscous royal.</p>
+                        <div class="flex justify-between items-center">
+                            <p class="text-amber-600 font-bold">30-50 EUR</p>
+                            <button class="text-amber-500 hover:text-amber-600 font-medium flex items-center">
+                                Voir plus <i class="fas fa-chevron-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Restaurant 3 -->
+                <div class="restaurant-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Fish & Chips" class="restaurant-img w-full h-full object-cover transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Fish & Chips</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">Fruits de mer</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Ce restaurant est parfait pour une pause rapide mais gourmande, avec des poissons frais grillés et des fruits de mer délicieux.</p>
+                        <div class="flex justify-between items-center">
+                            <p class="text-amber-600 font-bold">10-20 EUR</p>
+                            <button class="text-amber-500 hover:text-amber-600 font-medium flex items-center">
+                                Voir plus <i class="fas fa-chevron-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Restaurant 4 -->
+                <div class="restaurant-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Restaurant Les Blancs" class="restaurant-img w-full h-full object-cover transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Restaurant Les Blancs</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded">Méditerranéen</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Un endroit idéal pour goûter des plats méditerranéens comme la paella et les fruits de mer grillés avec vue sur la mer.</p>
+                        <div class="flex justify-between items-center">
+                            <p class="text-amber-600 font-bold">20-40 EUR</p>
+                            <button class="text-amber-500 hover:text-amber-600 font-medium flex items-center">
+                                Voir plus <i class="fas fa-chevron-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Restaurant 5 -->
+                <div class="restaurant-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <div class="overflow-hidden h-48">
+                        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Le Marrakchi" class="restaurant-img w-full h-full object-cover transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Le Marrakchi</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded">Traditionnel</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Ce restaurant propose des plats marocains authentiques dans un cadre traditionnel, idéal pour une immersion dans la culture locale.</p>
+                        <div class="flex justify-between items-center">
+                            <p class="text-amber-600 font-bold">15-25 EUR</p>
+                            <button class="text-amber-500 hover:text-amber-600 font-medium flex items-center">
+                                Voir plus <i class="fas fa-chevron-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Restaurant 6 - Special Offer -->
+                <div class="restaurant-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300 border-2 border-amber-400">
+                    <div class="relative">
+                        <div class="overflow-hidden h-48">
+                            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Dîner spécial" class="restaurant-img w-full h-full object-cover transition duration-500">
+                        </div>
+                        <div class="absolute top-4 right-4 bg-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                            OFFRE SPÉCIALE
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-gray-800">Dîner Romantique</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded">Expérience unique</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Dîner privé sur la plage avec service personnalisé, menu gastronomique et vue sur le coucher de soleil.</p>
+                        <div class="flex justify-between items-center">
+                            <p class="text-amber-600 font-bold"><span class="line-through text-gray-400">120 EUR</span> 90 EUR</p>
+                            <button class="bg-amber-500 hover:bg-amber-600 text-white py-2 px-4 rounded-full transition">Réserver</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover Agadir Section -->
+    <section id="discover" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Découvrir Agadir</h2>
+            
+            <!-- History -->
+            <div class="mb-16">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2">
+                        <img src="https://images.unsplash.com/photo-1583422199210-c0b5d60147a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Agadir" class="w-full rounded-lg shadow-lg">
+                    </div>
+                    <div class="md:w-1/2">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Histoire d'Agadir</h3>
+                        <p class="text-gray-600 mb-4">Agadir est une ville dynamique située sur la côte atlantique du Maroc. Après un tremblement de terre dévastateur en 1960, elle a été reconstruite pour devenir un centre touristique moderne tout en conservant ses racines culturelles et historiques.</p>
+                        <p class="text-gray-600">Aujourd'hui, Agadir est réputée pour ses plages de sable fin, son climat doux toute l'année et son hospitalité légendaire.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Beaches -->
+            <div class="parallax py-32 mb-16" style="background-image: url('https://images.unsplash.com/photo-1505228395891-9a51e7e753bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80');">
+                <div class="text-center bg-black bg-opacity-50 text-white py-8 mx-auto max-w-3xl rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4">Plages et activités balnéaires</h3>
+                    <p class="px-4">Agadir est réputée pour ses plages de sable fin et son climat doux. Les visiteurs peuvent profiter de sports nautiques, de baignades ou simplement se détendre sur la plage.</p>
+                </div>
+            </div>
+            
+            <!-- Attractions -->
+            <div>
+                <h3 class="text-2xl font-bold mb-8 text-center text-gray-800">Attractions touristiques</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Attraction 1 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1582719471385-578d010221ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Kasbah d'Agadir" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2 text-gray-800">La Kasbah d'Agadir</h4>
+                            <p class="text-gray-600">Un ancien site historique offrant une vue imprenable sur la ville et la mer. Construite en 1540, elle a survécu au tremblement de terre de 1960.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Attraction 2 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1574235826425-3e9b5f3c6b3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Souk El Had" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2 text-gray-800">Le Souk El Had</h4>
+                            <p class="text-gray-600">Le plus grand marché de la ville, où l'on peut trouver des produits locaux, des épices, de l'artisanat et des souvenirs. Plus de 6000 commerçants!</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Attraction 3 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300">
+                        <img src="https://images.unsplash.com/photo-1551085254-e96b210db58a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" alt="Vallée des Oiseaux" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h4 class="text-xl font-bold mb-2 text-gray-800">La Vallée des Oiseaux</h4>
+                            <p class="text-gray-600">Un parc zoologique en centre-ville qui abrite de nombreuses espèces d'oiseaux, ainsi que des singes et d'autres animaux dans un cadre naturel.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Practical Tips -->
+            <div class="mt-16 bg-gray-50 p-8 rounded-lg">
+                <h3 class="text-2xl font-bold mb-6 text-center text-gray-800">Conseils pratiques</h3>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="bg-amber-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
+                            <i class="fas fa-money-bill-wave text-2xl text-amber-600"></i>
+                        </div>
+                        <h4 class="font-bold mb-1">Monnaie</h4>
+                        <p class="text-gray-600 text-sm">Dirham marocain (MAD)<br>1 EUR ≈ 10.8 MAD</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
+                            <i class="fas fa-bus text-2xl text-blue-600"></i>
+                        </div>
+                        <h4 class="font-bold mb-1">Transport</h4>
+                        <p class="text-gray-600 text-sm">Bus, taxis, location de voiture<br>Comptez 20-30 MAD pour un taxi</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
+                            <i class="fas fa-sun text-2xl text-green-600"></i>
+                        </div>
+                        <h4 class="font-bold mb-1">Climat</h4>
+                        <p class="text-gray-600 text-sm">Doux toute l'année<br>Étés: 25-30°C, Hivers: 18-22°C</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-purple-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-3">
+                            <i class="fas fa-info-circle text-2xl text-purple-600"></i>
+                        </div>
+                        <h4 class="font-bold mb-1">Conseils</h4>
+                        <p class="text-gray-600 text-sm">Marchandage normal dans les souks<br>Tenue modeste recommandée</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-800 text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Contactez-nous</h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-bold mb-4">Informations de contact</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-amber-500 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Adresse</h4>
+                                <p class="text-gray-300">Avenue Mohammed V, Agadir 80000, Maroc</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-amber-500 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Téléphone</h4>
+                                <p class="text-gray-300">+212 5 28 84 00 00</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-amber-500 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <p class="text-gray-300">contact@agadirparadise.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-amber-500 mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Heures d'ouverture</h4>
+                                <p class="text-gray-300">Réception ouverte 24h/24<br>Service client: 8h-20h</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-xl font-bold mb-4">Suivez-nous</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-700 hover:bg-blue-600 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-pink-600 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-blue-400 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-gray-700 hover:bg-red-500 w-10 h-10 rounded-full flex items-center justify-center transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-bold mb-4">Envoyez-nous un message</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block mb-1">Nom complet</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div>
+                            <label for="subject" class="block mb-1">Sujet</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-amber-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-1">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-amber-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded transition duration-300">
+                            Envoyer le message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <div class="flex items-center">
+                        <i class="fas fa-umbrella-beach text-2xl text-amber-500 mr-2"></i>
+                        <h2 class="text-xl font-bold text-white">Agadir<span class="text-amber-500">Paradise</span></h2>
+                    </div>
+                    <p class="text-sm mt-2">Votre séjour de rêve à Agadir</p>
+                </div>
+                <div class="text-sm">
+                    <p>&copy; 2023 Agadir Paradise. Tous droits réservés.</p>
+                    <div class="flex space-x-4 mt-2">
+                        <a href="#" class="hover:text-amber-500">Mentions légales</a>
+                        <a href="#" class="hover:text-amber-500">Politique de confidentialité</a>
+                        <a href="#" class="hover:text-amber-500">Conditions générales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-amber-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center opacity-0 invisible transition-all duration-300">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Tab functionality
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active', 'text-amber-600', 'border-amber-500');
+                    btn.classList.add('text-gray-600');
+                });
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                button.classList.add('active', 'text-amber-600', 'border-amber-500');
+                button.classList.remove('text-gray-600');
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible');
+                backToTopButton.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

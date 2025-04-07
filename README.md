@@ -1,15 +1,12 @@
 ---
-title: DeepSite
+title: conciergerie
 emoji: 🐳
-colorFrom: blue
-colorTo: blue
-sdk: docker
-pinned: true
-app_port: 5173
-license: mit
-short_description: Generate any application with DeepSeek
-models:
-  - deepseek-ai/DeepSeek-V3-0324
+colorFrom: yellow
+colorTo: green
+sdk: static
+pinned: false
+tags:
+  - deepsite
 ---
 
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
