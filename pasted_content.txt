@@ -1,0 +1,52 @@
+Je veux que tu me fasses un beau site internet, avec les données les plus fiables que tu trouveras sur Internet. Je veux suivre le prix de plusieurs whiskys, sur plusieurs sites web, au court du temps. Je veux que tu me créer ce site, avec des images/screenshots pour rendre ca + visuel et joili. J'aimerai pouvoir suivre l'évolution des prix au cours du temps, que tous les menus du site soient fonctionnels. Je veux aussi que à la fin, tu me dises comment sauvegarder cette ébauche de site internet, pour la retrouver une prochaine fois/ l'améliorer une prochaine fois. 
+
+Liste des whisky à surveiller (et leur différentes appellations, entre francais et anglais par exemple)
+
+Ardbeg 10 , 10 ans, 10yo
+Ardbeg wee beastie , 5 ans, 5yo
+Arbeg Uigeadail
+Springbank 12 cask strengh 
+Springbank 10
+Springbank 15
+Springbank 18
+Laphroaig 10
+Laphroaig 10 cask strengh
+Laphroaig Lore 
+Big Peat 12 , 12 ans, 12yo
+Big Peat Chistmas Edition, Noel
+Kilkerran 12 , 12 ans, 12yo
+Kilkerran 16 , 16 ans, 16yo
+Kilkerran Heavily Peated batch 10
+Bunnahabian 12 cask strengh  , 12 ans brut de fu, 12yo CS
+Bunnahabian 18
+Bunnahabian 21
+Ledaig 10 , 10 ans, 10yo
+Glen Scotia Victoriana
+Kilchoman Machir Bay
+Kilchoman Machir Bay CS, cask strengh
+Longrow Peated
+Bruichladdich The Classic Laddie
+Port Charlotte 10 , 10 ans, 10yo
+Lagavulin 16 , 16 ans, 16yo
+Talisker 10 , 10 ans, 10yo
+Thor Boyo
+Nikka From the Barrel
+Hazelburn 10 , 10 ans, 10yo
+Glenfarclas 105
+Big Peat Feis ile
+Caol ila 12 , 12 ans, 12yo
+
+Liste des sites web
+
+https://www.jardinvouvrillon.fr
+https://www.whisky.fr
+https://drankdozijn.fr
+https://www.whiskysite.nl/en/
+https://www.prestigewhisky.fr/
+https://www.maltmate.de/
+https://www.closdesmillesimes.com/?fond=index
+https://dugasclubexpert.fr/
+
+Et dire si bouteille non vendue sur le site où out of stock au lieu de mettre une ligne non remplie dans le tableau.
+
+Je veux aussi que à la fin, tu me dises comment sauvegarder cette ébauche de site internet dans "https://huggingface.co/spaces/enzostvs/deepsite", pour la retrouver une prochaine fois/ l'améliorer une prochaine fois. 
